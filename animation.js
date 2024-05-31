@@ -173,7 +173,7 @@ function tetris() {
           rotationAngles[i] = Math.round(rotationAngles[i] / 360) * 360; // Ensure rotation angle is a multiple of 360 degrees
         }
         }
-      }
+      
        
     push();
     rectMode(CENTER);
