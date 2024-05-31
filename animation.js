@@ -47,15 +47,16 @@ function falldown(){
   //greySquare
   for (let i = 0; i < greySquare.length; i++) {
     if (greySquareStart[i].y < greySquare[i].y) {
-      greySquareStart[i].y += 7;
+      greySquareStart[i].y += 5;
       if (greySquareStart[i].y > greySquare[i].y) {
         greySquareStart[i].y = greySquare[i].y; // Prevent exceeding target y value
-      }
     }
+  }
     fill(217, 216, 212); // grey
     noStroke();
     rect(greySquareStart[i].x, greySquareStart[i].y,18 * width / 800, 18 * height / 800);
   }
+
   //redSquare
   for (let i = 0; i < redSquare.length; i++) {
     if (redSquareStart[i].y < redSquare[i].y) {
@@ -88,7 +89,7 @@ function tetris() {
   // yellow part rotate
   for (let i = 0; i < yellowPart.length; i++) {
     if (yellowPartStart[i].y < yellowPart[i].y) {
-      yellowPartStart[i].y += 2;
+      yellowPartStart[i].y += 2;//下降速度
       if (yellowPartStart[i].y >= yellowPart[i].y) {
         yellowPartStart[i].y = yellowPart[i].y; // Prevent exceeding target y value
         isRotating[i] = false; // Stop current block rotation
@@ -191,5 +192,3 @@ function tetris() {
   }
 
 }
-
-

@@ -1,3 +1,4 @@
+//Re-adjust the pattern drawing order and declare it as a global variable for calling in animation.js
 let h1;
 let yellowLines1;
 let w1;
@@ -11,10 +12,13 @@ let greySquare;
 let redSquare;
 let blueSquare;
 
+
 function setup() {
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
-  angleMode(DEGREES);
+  angleMode(DEGREES);//Adjust the angle mode to facilitate animation drawing
+  //Pattern in group code
   h1 = 18 * height / 800;
+    //Draw horizaontal yellow line
   yellowLines1 = [
     { x: 0, y: 18 * height / 800, w: width, h: h1 },
     { x: 0, y: 127 * height / 800, w: width, h: h1 },
@@ -30,7 +34,7 @@ function setup() {
     { x: 0, y: 708 * height / 800, w: 65 * width / 800, h: h1 },
     { x: 0, y: 756 * height / 800, w: width, h: h1 },
   ];
-  
+    //Draw Vertucal yellow line
   w1 = 18 * width / 800;
   yellowLines2 = [
     { x: 20 * width / 800, y: 0, w: w1, h: 298 * height / 800 },
@@ -47,7 +51,7 @@ function setup() {
     { x: 738 * width / 800, y: 500 * height / 800, w: w1, h: 156 * height / 800 },
     { x: 769 * width / 800, y: 0, w: w1, h: height },
   ];
-  
+   //Draw other yellow part
   yellowPart = [
     { x: 110 * width / 800, y: 47 * height / 800, w: 70 * width / 800, h: 25 * height / 800 },
     { x: 110 * width / 800, y: 213 * height / 800, w: 70 * width / 800, h: 52 * height / 800 },
@@ -58,12 +62,12 @@ function setup() {
     { x: 690 * width / 800, y: 387 * height / 800, w: 79 * width / 800, h: 40 * height / 800 },
     { x: 690 * width / 800, y: 578 * height / 800, w: 79 * width / 800, h: 40 * height / 800 },
   ];
-  
+    //Draw other yellow part on the top
   yellowPart1 = [
     { x: 240 * width / 800, y: 400 * height / 800, w: 33 * width / 800, h: 27 * height / 800 },
     { x: 545 * width / 800, y: 208 * height / 800, w: 37 * width / 800, h: 28 * height / 800 },
   ];
-  
+    //Draw red part
   redPart = [
     { x: 124 * width / 800, y: 36 * height / 800, w: 36 * width / 800, h: 91 * height / 800 },
     { x: 209 * width / 800, y: 36 * height / 800, w: 58 * width / 800, h: 68 * height / 800 },
@@ -75,7 +79,7 @@ function setup() {
     { x: 690 * width / 800, y: 604 * height / 800, w: 48 * width / 800, h: 36 * height / 800 },
     { x: 360 * width / 800, y: 756 * height / 800, w: 52 * width / 800, h: 38 * height / 800 },
   ];
-  
+  //Draw blue part
   bluePart = [
     { x: 66 * width / 800, y: 158 * height / 800, w: 44 * width / 800, h: 42 * height / 800 },
     { x: 66 * width / 800, y: 535 * height / 800, w: 44 * width / 800, h: 45 * height / 800 },
@@ -85,7 +89,7 @@ function setup() {
     { x: 721 * width / 800, y: 82 * height / 800, w: 48 * width / 800, h: 27 * height / 800 },
     { x: 690 * width / 800, y: 534 * height / 800, w: 48 * width / 800, h: 44 * height / 800 },
   ];
-  
+    //Draw grey squares
   greyPart = [
     { x: 92 * width / 800, y: 47 * height / 800, w: 18 * width / 800, h: 25 * height / 800 },
     { x: 124 * width / 800, y: 72 * height / 800, w: 36 * width / 800, h: 19 * height / 800 },
@@ -105,7 +109,7 @@ function setup() {
     { x: 559 * width / 800, y: 479 * height / 800, w: 68 * width / 800, h: 21 * height / 800 },
     { x: 137 * width / 800, y: 635 * height / 800, w: 23 * width / 800, h: 20 * height / 800 },
   ]
-  
+    //Draw grey squares
   greySquare = [
     { x: 162 * width / 800, y: 18 * height / 800 },
     { x: 257 * width / 800, y: 18 * height / 800 },
@@ -238,7 +242,7 @@ function setup() {
     { x: 30 * width / 800, y: 756 * height / 800 },
     { x: 672 * width / 800, y: 774 * height / 800 },
   ]
-  
+    //draw red squares
   redSquare = [
     { x: 48 * width / 800, y: 0 },
     { x: 180 * width / 800, y: 0 },
@@ -407,17 +411,19 @@ function setup() {
     { x: 769 * width / 800, y: 127 * height / 800 },
     { x: 756 * width / 800, y: 280 * height / 800 },
   ]
-  
+  //Call the function in animation.js to set the new arraies
   Start();
 
 }
 
 function draw() {
   background(242, 242, 240);
+  //Call the function in animation.js to draw the squares
   falldown();
-  tetris();
+  tetris(); 
 }
 
+//Set the function to resize the canvas with the window
 function windowResized() {
   resizeCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
   draw();
