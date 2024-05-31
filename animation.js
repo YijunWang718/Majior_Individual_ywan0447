@@ -99,7 +99,7 @@ function tetris() {
   // yellow part rotate
   for (let i = 0; i < yellowPart.length; i++) {
     if (yellowPartStart[i].y < yellowPart[i].y) {
-      yellowPartStart[i].y += 1.5;//speed
+      yellowPartStart[i].y += 3;//speed
       if (yellowPartStart[i].y >= yellowPart[i].y) {
         yellowPartStart[i].y = yellowPart[i].y; // Prevent exceeding target y value
         isRotating[i] = false; // Stop current block rotation
@@ -125,7 +125,7 @@ function tetris() {
   // redPart rotate
   for (let i = 0; i < redPart.length; i++) {
     if (redPartStart[i].y < redPart[i].y) {
-      redPartStart[i].y += 1.5;
+      redPartStart[i].y += 2.5;
       if (redPartStart[i].y >= redPart[i].y) {
         redPartStart[i].y = redPart[i].y; // Prevent exceeding target y value
         isRotating[i] = false; // Stop current block rotation
@@ -151,7 +151,7 @@ function tetris() {
   // bluePart rotate
   for (let i = 0; i < bluePart.length; i++) {
     if (bluePartStart[i].y < bluePart[i].y) {
-      bluePartStart[i].y += 1.5;
+      bluePartStart[i].y += 1.9;
       if (bluePartStart[i].y >= bluePart[i].y) {
         bluePartStart[i].y = bluePart[i].y; // Prevent exceeding target y value
         isRotating[i] = false; // Stop current block rotation
@@ -177,7 +177,7 @@ function tetris() {
    //greyPart rotate
     for (let i = 0; i < greyPart.length; i++) {
       if (greyPartStart[i].y< greyPart[i].y) {
-        greyPartStart[i].y += 1.5;
+        greyPartStart[i].y += 2;
         if (greyPartStart[i].y >= greyPart[i].y) {
           greyPartStart[i].y =greyPart[i].y; // Prevent exceeding target y value
           isRotating[i] = false; // Stop current block rotation
