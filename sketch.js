@@ -13,6 +13,7 @@ let blueSquare;
 
 function setup() {
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
+  angleMode(DEGREES);
   h1 = 18 * height / 800;
   yellowLines1 = [
     { x: 0, y: 18 * height / 800, w: width, h: h1 },
@@ -408,27 +409,13 @@ function setup() {
   ]
   
   Start();
+
 }
 
 function draw() {
-  background(242, 242, 240); // 白色背景
+  background(242, 242, 240);
   falldown();
-}
-
-function drawGraph(graphs, col) {
-  fill(col);
-  noStroke();
-  for (let graph of graphs) {
-    rect(graph.x, graph.y, graph.w, graph.h);
-  }
-}
-
-function drawSquare(squares, col) {
-  fill(col);
-  noStroke();
-  for (let square of squares) {
-    rect(square.x, square.y, 18 * width / 800, 18 * height / 800);
-  }
+  tetris();
 }
 
 function windowResized() {
