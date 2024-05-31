@@ -21,7 +21,7 @@ Figuring out how to batch process an array of blocks so that each individual blo
 ## Inspiration
 ![an image of ](readmeImages/R.png)
 
-[link of ](https://github.com/pedromocco/tetris)
+[link of technical inspiration](https://github.com/pedromocco/tetris)
 Since the graphics are made up of blocks, and they are divided into large blocks and small blocks, I thought of making animations that imitate the effect of Tetris.
 
 ## Technical Explanation
