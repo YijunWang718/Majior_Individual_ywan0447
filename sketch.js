@@ -12,7 +12,6 @@ let greySquare;
 let redSquare;
 let blueSquare;
 
-
 function setup() {
   createCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
   angleMode(DEGREES);//Adjust the angle mode to facilitate animation drawing
@@ -413,23 +412,30 @@ function setup() {
   ]
   //Call the function in animation.js to set the new arraies
   Start();
-
+  startTime = millis();//Initialize startTime
 }
 
 function draw() {
   background(242, 242, 240);
-  //Call the function in animation to draw the squares
-  falldown();
-  //Run the tetris animation after 4 seconds
-  if (millis() - startTime > interval) {
-    tetris();
-  }
+  //Call the function in animation to draw the squares 
+  animation();
+
 }
-     
+
+//Draw different animations according to time
+function animation(){
+  if (millis() - startTime >= 0){
+    falldown(); }
+  if (millis() - startTime > interval) {
+    tetris();}
+  if (millis() - startTime > interval * 4.3) {
+    clean();}
+  }
+
+
 //Set the function to resize the canvas with the window
 function windowResized() {
   resizeCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
-  draw();
 }
 
 
