@@ -418,13 +418,19 @@ function setup() {
 
 function draw() {
   background(242, 242, 240);
-  //Call the function in animation.js to draw the squares
+  //Call the function in animation to draw the squares
   falldown();
-  tetris(); 
+  //Run the tetris animation after 4 seconds
+  if (millis() - startTime > interval) {
+    tetris();
+  }
 }
-
+     
 //Set the function to resize the canvas with the window
 function windowResized() {
   resizeCanvas(min(windowWidth, windowHeight), min(windowWidth, windowHeight));
   draw();
 }
+
+
+
